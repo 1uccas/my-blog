@@ -8,8 +8,12 @@ $sql = "SELECT * FROM my_posts";
 $result = $link->query($sql);
 
 if ($result->num_rows > 0) {
-	$row = $result->fetch_assoc();
-	print_r($row);
+	while ($row = $result->fetch_assoc()) {
+		print_r($row);
+		echo "<br>";
+	}
+	
+	
 }
 echo "Home";
 
