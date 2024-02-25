@@ -1,14 +1,24 @@
 <?php 
+require 'vendor/autoload.php';
+ 
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__. "\..\..");
+$dotenv->load();
+
 class DatabaseConnection {
     private $link;
-    
-    const SERVIDOR = "";
-    const USUARIO = "";
-    const SENHA = "";
-    const BANCO = "";
+
+    public $SERVIDOR;
+    public $USUARIO;
+    public $SENHA ;
+    public $BANCO;
 
     public function __construct() {
-        $this->link = mysqli_connect(self::SERVIDOR, self::USUARIO, self::SENHA, self::BANCO);
+        $this->SERVIDOR = $_ENV['DB_SERVER'];
+        $this->USUARIO = $_ENV['DB_USER'];
+        $this->SENHA = $_ENV['DB_PASSWORD'];
+        $this->BANCO = $_ENV['DB_DATABASE'];
+
+        $this->link = mysqli_connect($this->SERVIDOR, $this->USUARIO, $this->SENHA, $this->BANCO);
 
         // Valida a conexão
         if (mysqli_connect_errno()){
