@@ -1,1 +1,4 @@
-document.write("hello World");
+document.write(`
+	My - Blog
+	<br>
+	`);
