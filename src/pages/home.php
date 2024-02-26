@@ -11,11 +11,8 @@ if ($result->num_rows > 0) {
 	while ($row = $result->fetch_assoc()) {
 		print_r($row);
 		echo "<br>";
-	}
-	
-	
+	}	
 }
-echo "Home";
 
 ?>
 <head>
@@ -26,5 +23,5 @@ echo "Home";
 	<title>My Blog</title>
 </head>
 <body>
-
+	<script src="../../public/utils/header.js"></script>
 </body>
