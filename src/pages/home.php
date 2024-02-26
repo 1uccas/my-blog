@@ -25,4 +25,5 @@ function queryMyPosts(){
 </head>
 <body>
 	<script src="../../public/utils/header.js"></script>
+	<?php queryMyPosts(); ?>
 </body>
