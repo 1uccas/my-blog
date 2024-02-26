@@ -5,12 +5,21 @@ document.write(`
 		  src: url("../../public/font/Protest_Riot/ProtestRiot-Regular.ttf");
 		}
 		#navbarNav{
+			display: flex;
+			flex-direction: column;
+			aling-items: center;
+			justify-content: center;
 			margin-left: 26rem;
-			margin-right: 26rem;
+			margin-right: 35rem;
 			font-size: 22px;
 		}
-		#navbar_header{
+		.container-fluid{
 			font-family: 'Protest Riot', sans-serif;
+			
+		}
+		#navbar_header{
+			box-shadow: 5px 5px 8px gray;
+			border-radius: 5px; 
 		}
 		#txtHeader{
 			font-size: 30px;
