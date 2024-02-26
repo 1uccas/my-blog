@@ -5,21 +5,13 @@ document.write(`
 		  src: url("../../public/font/Protest_Riot/ProtestRiot-Regular.ttf");
 		}
 		#navbarNav{
-			display: flex;
-			flex-direction: column;
-			aling-items: center;
-			justify-content: center;
-			margin-left: 26rem;
-			margin-right: 35rem;
 			font-size: 22px;
 		}
 		.container-fluid{
 			font-family: 'Protest Riot', sans-serif;
-			
 		}
 		#navbar_header{
 			box-shadow: 5px 5px 8px gray;
-			border-radius: 5px; 
 		}
 		#txtHeader{
 			font-size: 30px;
@@ -51,4 +43,5 @@ document.write(`
 	  </div>
 	</nav>
 	<br>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 	`);
