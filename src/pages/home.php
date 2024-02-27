@@ -10,8 +10,12 @@ function queryMyPosts(){
 
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
-			print_r($row);
-			echo "<br>";
+			echo "
+				<div='class_post'>
+					<h1>$row[title]</h1>
+					<p>$row[post]</p>
+				</div>";
+				
 		}	
 	}
 }
