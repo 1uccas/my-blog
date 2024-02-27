@@ -4,12 +4,12 @@ document.write(`
 		  font-family: 'Protest Riot';
 		  src: url("../../public/font/Protest_Riot/ProtestRiot-Regular.ttf");
 		}
-		footer.footer_class, hr{
+		footer.footer_class{
 		  font-family: 'Protest Riot', sans-serif;
 		  bottom: 0;
 		  left: 0;
 		  height: 40px;
-		  position: fixed;
+		  position: relative;
 		  width: 100%;
 		  text-align: center;
 		  display: flex;
