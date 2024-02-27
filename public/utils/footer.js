@@ -15,8 +15,7 @@ document.write(`
 		  display: flex;
 		  flex-direction: row;
 		  aling-items: center;
-		  justify-content: center;
-		  /*justify-content: space-between;*/
+		  justify-content: space-evenly;
 		}
 		hr{
 			display: flex;
@@ -30,15 +29,7 @@ document.write(`
 	<div class="footer_class">
 		<hr>
 		<footer class="footer_class">
-		    <p>&copy; 2024 BlogsBlogs</p>
-		    <!--<a href="">Lexi</a>-->
-		    <!--<a href="">Lexi</a>-->
-		    <!--<a href="">Lexi</a>-->
-		    <!--<a href="">Lexi</a>-->
+		    <p>&copy; 2024 Blogs~Blogs</p>
 		</footer>
-
 	</div>
-	
-	
-
 	`);
