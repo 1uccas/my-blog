@@ -29,7 +29,7 @@ document.write(`
 	<div class="footer_class">
 		<hr>
 		<footer class="footer_class">
-		    <p>&copy; 2024 Blogs~Blogs</p>
+		    <p>&copy; 2024 Flip~Flops - Todos os direitos reservados </p>
 		</footer>
 	</div>
 	`);
