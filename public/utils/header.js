@@ -14,7 +14,6 @@ document.write(`
 			background: linear-gradient(to right, #128e21, #08c549);
 			padding-top: 10px;
 			padding-bottom: 10px;
-			box-shadow: 5px 5px 8px gray;
 		}
 		#txtHeader{
 			color: white;
