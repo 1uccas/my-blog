@@ -19,6 +19,7 @@ body{
 	background: linear-gradient(to right, #db8005, #e11e0b);
 	padding: 10px;
 	color: black;
+	font-weight: bold;
 	margin: 10px 0px 10px 0px;
 
 	display: flex;
@@ -26,12 +27,15 @@ body{
 
 	transform: scale(1);
     transition: transform 0.5s;
+
+    border-radius: 2px;
 }
 .div_only_post:hover{
 	transform: scale(1.02);
 }
 .label_title_post{
 	font-size: 30px;
+	font-weight: bold;
 }
 .class_time_post{
 	background: none;
