@@ -1,23 +1,5 @@
 <?php
-function queryMyPosts(){
-	require_once 'src/conf/db.php';
-
-	$mysql = new DatabaseConnection();
-	$link = $mysql->getLink();
-
-	$sql = "SELECT * FROM my_posts";
-	$result = $link->query($sql);
-
-	if ($result->num_rows > 0) {
-		while ($row = $result->fetch_assoc()) {
-			echo "
-				<h3>$row[title]</h3>
-				<p>$row[post]</p>
-				";
-				
-		}	
-	}
-}
+include_once 'src/php/QueryProcessor.php';
 ?>
 <head>
 	<meta charset="utf-8">
@@ -29,7 +11,7 @@ function queryMyPosts(){
 <body>
 	<script src="../../public/utils/header.js"></script>
 	<div class="class_post">
-		<?php queryMyPosts(); ?>
+		<?php queryHomeMyPosts(); ?>
 	</div>
 	
 	<script src="../../public/utils/footer.js"></script>
