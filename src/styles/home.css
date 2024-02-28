@@ -4,7 +4,7 @@ body{
     flex-direction: column;
     min-height: 100vh;
 }
-.class_post{
+.main_master{
 	padding-top: 40px;
     flex: 1;
 	display: flex;

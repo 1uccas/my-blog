@@ -9,10 +9,15 @@ include_once 'src/php/QueryProcessor.php';
 	<title>Flip ~ Flops · Home</title>
 </head>
 <body>
-	<script src="../../public/utils/header.js"></script>
-	<div class="class_post">
-		<?php queryHomeMyPosts(); ?>
-	</div>
+	<header class="header">
+		<script src="../../public/utils/header.js"></script>
+	</header>
+	<main class="main_master">
+		<div class="class_post">
+			<?php queryHomeMyPosts(); ?>
+		</div>
+	</main>
+	
 	
 	<script src="../../public/utils/footer.js"></script>
 </body>
