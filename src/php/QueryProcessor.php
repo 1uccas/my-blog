@@ -4,14 +4,16 @@ function queryHomeMyPosts(){
     	$arrayMounth = ["", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", 
     	"Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
-        $data = date("n", strtotime($allData));
+        $data = date("n", strtotime($allData)); //Month 
         $year = date("Y", strtotime($allData));
         $time = date("H:i", strtotime($allData));
+        $day = date("d", strtotime($allData));
 
         return array(
 	        "month" => $arrayMounth[$data],
 	        "year" => $year,
-	        "time" => $time
+	        "time" => $time,
+	        "day" => $day
 	    );
     }
 
@@ -31,6 +33,7 @@ function queryHomeMyPosts(){
             $month = $formatted_data['month'];
             $year = $formatted_data['year'];
             $time = $formatted_data['time'];
+            $day = $formatted_data['day'];
 
             echo "
             <div class='class_time_post'>
@@ -38,7 +41,7 @@ function queryHomeMyPosts(){
         	</div>
             <div class='div_only_post' title='Post in ~ $time'>
                 <label>{$row['title']}</label> 
-                <p>{$row['post']}</p>
+                <label>$day $month $year</label>
             </div>";
         }   
     }
