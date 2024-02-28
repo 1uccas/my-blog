@@ -34,10 +34,10 @@ function queryHomeMyPosts(){
 
             echo "
             <div class='class_time_post'>
-            	<h2>$year ~ $month</h2>
+            	<label>$year ~ $month</label>
         	</div>
             <div class='div_only_post' title='Post in ~ $time'>
-                <h3>{$row['title']}</h3> 
+                <label>{$row['title']}</label> 
                 <p>{$row['post']}</p>
             </div>";
         }   
