@@ -40,8 +40,8 @@ function queryHomeMyPosts(){
             	<label>$year ~ $month</label>
         	</div>
             <div class='div_only_post' title='Post in ~ $time'>
-                <label>{$row['title']}</label> 
-                <label>$day $month $year</label>
+                <label class='label_title_post'>{$row['title']}</label> 
+                <label class='label_fullData_post'>$day $month $year · $time</label>
             </div>";
         }   
     }
