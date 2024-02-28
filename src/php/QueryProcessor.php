@@ -37,7 +37,7 @@ function queryHomeMyPosts(){
 
             echo "
             <div class='class_time_post'>
-            	<label>$year ~ $month</label>
+            	<label>$year - $month</label>
         	</div>
             <div class='div_only_post' title='Post in ~ $time'>
                 <label class='label_title_post'>{$row['title']}</label> 
