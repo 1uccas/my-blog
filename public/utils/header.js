@@ -11,7 +11,7 @@ document.write(`
 			font-family: 'Protest Riot', sans-serif;
 		}
 		#navbar_header{
-			background: linear-gradient(to right, #0a6114, #27b639);
+			background: #db8005;
 			padding-top: 10px;
 			padding-bottom: 10px;
 		}
