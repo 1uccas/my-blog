@@ -12,3 +12,36 @@ body{
 	align-items: center;
 	justify-content: center;
 }
+.div_only_post{
+	height: auto;
+	width: 800px;
+
+	background: linear-gradient(to right, #db8005, #e11e0b);
+	padding: 10px;
+	color: black;
+	margin: 10px 0px 10px 0px;
+
+	display: flex;
+	flex-direction: column;
+
+	transform: scale(1);
+    transition: transform 0.5s;
+}
+.div_only_post:hover{
+	transform: scale(1.02);
+}
+.label_title_post{
+	font-size: 30px;
+}
+.class_time_post{
+	background: none;
+	width: 250px;
+	padding: 10px;
+	color: black;
+	font-size: 27px;
+	border-radius: 2px;
+}
+.label_fullData_post{
+	margin: 0;
+	margin-top: 50px;
+}
