@@ -26,15 +26,17 @@ function queryHomeMyPosts(){
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $data = $row['current_data']; 
-            
+
             $formatted_data = takeData($data);
             $month = $formatted_data['month'];
             $year = $formatted_data['year'];
             $time = $formatted_data['time'];
 
             echo "
+            <div class='class_time_post'>
+            	<h2>$year ~ $month</h2>
+        	</div>
             <div class='div_only_post' title='Post in ~ $time'>
-                <h2>$year ~ $month</h2> 
                 <h3>{$row['title']}</h3> 
                 <p>{$row['post']}</p>
             </div>";
