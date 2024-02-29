@@ -37,6 +37,13 @@ body{
 	font-size: 30px;
 	font-weight: bold;
 }
+.div_master_only_post, .label_title_post, .div_only_post{
+	cursor: pointer;
+}
+.div_master_only_post a{
+	color:  black;
+	text-decoration: none;
+}
 .class_time_post{
 	background: none;
 	width: 250px;

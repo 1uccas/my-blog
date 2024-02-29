@@ -39,10 +39,15 @@ function queryHomeMyPosts(){
             <div class='class_time_post'>
             	<label>$year - $month</label>
         	</div>
-            <div class='div_only_post' title='Post in ~ $time'>
-                <label class='label_title_post'>{$row['title']}</label> 
-                <label class='label_fullData_post'>$day $month $year · $time</label>
-            </div>";
+        	<div class='div_master_only_post'>
+        		<a href=''>
+        			<div class='div_only_post' title='Post in ~ $time'>
+		                <label class='label_title_post'>{$row['title']}</label> 
+		                <label class='label_fullData_post'>$day $month $year · $time</label>
+		            </div>
+        		</a>
+        	</div>
+            ";
         }   
     }
 }
