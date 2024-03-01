@@ -34,7 +34,7 @@ function queryHomeMyPosts(){
 
         $urlPost = $queryUrl;
         $explodeUrl = explode(" ", $urlPost); //separa url
-        $newUrl = array_slice($explodeUrl, 3); //pega da terceira posição até o final do array 
+        $newUrl = array_slice($explodeUrl, 2); //pega da terceira posição até o final do array 
         $removeCaracters = array_map(function($word) use ($caracters) {
             return strtr($word, $caracters);
         }, $newUrl);
