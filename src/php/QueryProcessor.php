@@ -30,9 +30,41 @@ function queryHomeMyPosts(){
 
     $result = returnDataPost();
 
+    $caracters = array(
+        'á' => 'a',
+        'à' => 'a',
+        'â' => 'a',
+        'ã' => 'a',
+        'é' => 'e',
+        'ê' => 'e',
+        'í' => 'i',
+        'ó' => 'o',
+        'ô' => 'o',
+        'õ' => 'o',
+        'ú' => 'u',
+        'ç' => 'c',
+        ',' => '',
+        "'" => '',
+        "!" => '',
+        "?" => ''
+    );
+
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $data = $row['current_data']; 
+            $data = $row['current_data'];
+
+            $urlPost = $row['title'];
+            $explodeUrl = explode(" ", $urlPost); // separa a URL em palavras
+            $newUrl = array_slice($explodeUrl, 3); // pega da terceira posição até o final do array 
+
+            // Remove a acentuação de cada palavra no array
+            $removeCaracters = array_map(function($word) use ($caracters) {
+                return strtr($word, $caracters);
+            }, $newUrl);
+
+            $implodeUrl = implode("-", $removeCaracters); // junta todas as palavras do array com "-"
+
+            print_r($implodeUrl);
 
             $formatted_data = takeData($data);
             $month = $formatted_data['month'];
