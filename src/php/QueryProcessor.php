@@ -19,6 +19,7 @@ function queryHomeMyPosts(){
             'C' => 'c',
             'D' => 'd',
             'E' => 'e',
+            'Ê' => 'e',
             'F' => 'f',
             'G' => 'g',
             'H' => 'h',
