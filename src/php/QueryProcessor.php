@@ -1,16 +1,16 @@
 <?php 
+function returnQuery(){
+    require_once 'src/conf/db.php';
+
+    $mysql = new DatabaseConnection();
+    $link = $mysql->getLink();
+
+    $sql = "SELECT * FROM my_posts";
+    $result = $link->query($sql);
+
+    return $result;
+}
 function queryHomeMyPosts(){
-    function returnDataPost(){
-        require_once 'src/conf/db.php';
-
-        $mysql = new DatabaseConnection();
-        $link = $mysql->getLink();
-
-        $sql = "SELECT * FROM my_posts";
-        $result = $link->query($sql);
-
-        return $result;
-    }
 
     function FormattedUrl($queryUrl){
         $caracters = array(
@@ -20,6 +20,7 @@ function queryHomeMyPosts(){
             'D' => 'd',
             'E' => 'e',
             'Ê' => 'e',
+            'É' => 'e',
             'F' => 'f',
             'G' => 'g',
             'H' => 'h',
@@ -87,7 +88,7 @@ function queryHomeMyPosts(){
         );
     }
 
-    $result = returnDataPost();
+    $result = returnQuery();
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
@@ -116,5 +117,14 @@ function queryHomeMyPosts(){
             ";
         }   
     }
+}
+function queryPostContent(){
+    $result = returnQuery();
+     if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()){
+            var_dump($row['post']);
+        }     
+    }
+     
 }
 ?>
