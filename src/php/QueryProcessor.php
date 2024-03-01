@@ -1,5 +1,16 @@
 <?php 
 function queryHomeMyPosts(){
+    function returnDataPost(){
+        require_once 'src/conf/db.php';
+
+        $mysql = new DatabaseConnection();
+        $link = $mysql->getLink();
+
+        $sql = "SELECT * FROM my_posts";
+        $result = $link->query($sql);
+
+        return $result;
+    }
     function takeData($allData){
     	$arrayMounth = ["", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", 
     	"Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
@@ -17,13 +28,7 @@ function queryHomeMyPosts(){
 	    );
     }
 
-    require_once 'src/conf/db.php';
-
-    $mysql = new DatabaseConnection();
-    $link = $mysql->getLink();
-
-    $sql = "SELECT * FROM my_posts";
-    $result = $link->query($sql);
+    $result = returnDataPost();
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
