@@ -94,7 +94,7 @@ function queryHomeMyPosts(){
         );
     }
     returnQuery();
-    $result = SimplesQueryPost();
+    $result = returnQuery();
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
@@ -126,8 +126,7 @@ function queryHomeMyPosts(){
     }
 }
 function queryPostContent(){
-    returnQuery();
-    $result = SimplesQueryPost();
+    $result = returnQuery();
      if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()){
             var_dump($row['post']);
