@@ -95,6 +95,7 @@ function queryHomeMyPosts(){
             $data = $row['current_data'];
             $url = $row['title'];
             $url = FormattedUrl($url);
+            $id = $row['id'];
 
             $formatted_data = takeData($data);
             $month = $formatted_data['month'];
@@ -107,7 +108,7 @@ function queryHomeMyPosts(){
                 <label>$year - $month</label>
             </div>
             <div class='div_master_only_post'>
-                <a href='post/{$url}'>
+                <a href='post/{$id}/{$url}'>
                     <div class='div_only_post' title='Post in ~ $time'>
                         <label class='label_title_post'>{$row['title']}</label> 
                         <label class='label_fullData_post'>$day $month $year · $time</label>
