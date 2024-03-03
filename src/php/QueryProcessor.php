@@ -6,7 +6,7 @@ function returnQuery(){
         $mysql = new DatabaseConnection();
         $link = $mysql->getLink();
 
-        $sql = "SELECT * FROM my_posts ORDER BY current_data DESC;";
+        $sql = "SELECT * FROM my_posts ORDER BY current_data ASC;";
         $result = $link->query($sql);
 
         return $result;
@@ -98,6 +98,7 @@ function queryHomeMyPosts(){
 
     $lastYear = null;
     $lastMonth = null;
+
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
