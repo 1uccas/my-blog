@@ -6,7 +6,7 @@ function returnQuery(){
         $mysql = new DatabaseConnection();
         $link = $mysql->getLink();
 
-        $sql = "SELECT * FROM my_posts";
+        $sql = "SELECT * FROM my_posts ORDER BY current_data DESC;";
         $result = $link->query($sql);
 
         return $result;
