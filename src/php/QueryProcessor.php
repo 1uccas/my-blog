@@ -10,8 +10,8 @@ function returnQuery(){ //Retorno de consultas do banco de dados
         //LINK contém todas as informações do banco de dados, necessários para gerar consultas, etc.
         $link = $mysql->getLink();
 
-        //Dados ordenados por ordem crescente
-        $sql = "SELECT * FROM my_posts ORDER BY current_data ASC;"; 
+        //Dados ordenados por ordem decrescente
+        $sql = "SELECT * FROM my_posts ORDER BY current_data DESC;"; 
         $result = $link->query($sql);
 
         return $result;
