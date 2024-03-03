@@ -96,6 +96,9 @@ function queryHomeMyPosts(){
     returnQuery();
     $result = SimplesQueryPost();
 
+    $lastYear = null;
+    $lastMonth = null;
+
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $data = $row['current_data'];
@@ -109,10 +112,17 @@ function queryHomeMyPosts(){
             $time = $formatted_data['time'];
             $day = $formatted_data['day'];
 
+            // Verifica se é um novo ano ou mês
+            $newYear = $lastYear !== $year;
+            $newMonth = $lastMonth !== $month;
+
+            if ($newYear || $newMonth) {
+                echo "<div class='class_time_post'><label>$year - $month</label></div>";
+                $lastYear = $year;
+                $lastMonth = $month;
+            }
+
             echo "
-            <div class='class_time_post'>
-                <label>$year - $month</label>
-            </div>
             <div class='div_master_only_post'>
                 <a href='post/{$id}/{$url}'>
                     <div class='div_only_post' title='Post in ~ $time'>
