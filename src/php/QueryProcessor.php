@@ -125,14 +125,19 @@ function queryHomeMyPosts(){
         }   
     }
 }
-function queryPostContent(){
-    returnQuery();
-    $result = SimplesQueryPost();
-     if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()){
-            var_dump($row['post']);
+function QueryPostID($id){
+    require_once 'src/conf/db.php';
+
+    $mysql = new DatabaseConnection();
+    $link = $mysql->getLink();
+
+    $query_id = "SELECT * FROM my_posts WHERE id='$id';";
+    $result_id = $link->query($query_id);
+
+    if ($result_id->num_rows > 0) {
+        while($row = $result_id->fetch_assoc()){
+            return var_dump($row['post']);
         }     
     }
-     
 }
 ?>
