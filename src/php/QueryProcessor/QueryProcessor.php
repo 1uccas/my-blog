@@ -1,4 +1,7 @@
 <?php 
+require_once "FormattedURL/FormattedURL.php";
+require_once "Date/Date.php";
+
 function returnQuery(){ //Retorno de consultas do banco de dados
     function SimplesQueryPost(){//Retorno simples (padrão) de uma consulta
 
@@ -23,27 +26,7 @@ function returnQuery(){ //Retorno de consultas do banco de dados
     $SimplesQueryPost = 'SimplesQueryPost';
 }
 function queryHomeMyPosts(){
-
-    //função para formatar caracteres da URL
-    //Recebe um parametro de acesso ~> a propria URL
-
-    //Função para retornar, em PT-BR, os meses definidos na função Date()
-    function takeData($allData){
-        $arrayMounth = ["", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", 
-        "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-
-        $data = date("n", strtotime($allData)); //Month 
-        $year = date("Y", strtotime($allData));
-        $time = date("H:i", strtotime($allData));
-        $day = date("d", strtotime($allData));
-
-        return array(
-            "month" => $arrayMounth[$data],
-            "year" => $year,
-            "time" => $time,
-            "day" => $day
-        );
-    }
+    
     returnQuery(); //Declarando a função principal 
     $result = SimplesQueryPost(); //definindo uma variavel de resultados retornados pela função
 
@@ -56,20 +39,22 @@ function queryHomeMyPosts(){
         //Definindo a variavel row (linha) como um alinhado para o funcionamento da variavel result
         //usando o fetch assoc para percorrer todas as linhas da colunas no banco de dados
 
-        require_once "FormattedURL/FormattedURL.php";
-
         while ($row = $result->fetch_assoc()) {
             $data = $row['current_data']; //Data atual
             $url = $row['title']; //Titulo para ser usado na url
-            $urlFormatted = new Formatted_url($url); //Usando a função de formatação de url
+
+            //função para formatar caracteres da URL
+            //Recebe um parametro de acesso ~> a propria URL
+            $urlFormatted = new Formatted_url($url);
             $id = $row['id']; 
 
+            //Função para retornar, em PT-BR, os meses definidos na função Date()
             //Definindo a função, para mostrar os meses em PT-BR, como uma variavel
-            $formatted_data = takeData($data); 
-            $month = $formatted_data['month'];
-            $year = $formatted_data['year'];
-            $time = $formatted_data['time'];
-            $day = $formatted_data['day'];
+            $Date = new Date($data); 
+            $month = $Date->requestData['month'];
+            $year = $Date->requestData['year'];
+            $time = $Date->requestData['time'];
+            $day = $Date->requestData['day'];
 
             //(#No_repete) Verifica se é um novo ano ou mês
             $newYear = $lastYear !== $year;
