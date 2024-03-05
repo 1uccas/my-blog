@@ -25,6 +25,8 @@ class Date{
     }
 
     public function __toString(){
+        //Utilizando strinf para SOMENTE formatar o array e imprimi-lo em QueryProcessor.php
+
         return sprintf(
             "Mês: %s, Dia: %s, Ano: %s, Hora: %s",
             $this->requestData['month'],

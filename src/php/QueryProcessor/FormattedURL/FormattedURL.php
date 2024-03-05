@@ -33,6 +33,7 @@ class Formatted_url{
         return $implodeUrl; 
     }
 
+    //__toString() para retornar a função sem o Error ~> Catchable fatal error: Object of class could not be converted to string
     public function __toString(){
         return $this->queryUrl;
     }
