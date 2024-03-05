@@ -26,67 +26,6 @@ function queryHomeMyPosts(){
 
     //função para formatar caracteres da URL
     //Recebe um parametro de acesso ~> a propria URL
-    function FormattedUrl($queryUrl){
-        $caracters = array(
-            'A' => 'a',
-            'B' => 'b',
-            'C' => 'c',
-            'D' => 'd',
-            'E' => 'e',
-            'Ê' => 'e',
-            'É' => 'e',
-            'F' => 'f',
-            'G' => 'g',
-            'H' => 'h',
-            'I' => 'i',
-            'J' => 'j',
-            'K' => 'k',
-            'L' => 'l',
-            'M' => 'm',
-            'N' => 'n',
-            'O' => 'o',
-            'P' => 'p',
-            'Q' => 'q',
-            'R' => 'r',
-            'S' => 's',
-            'T' => 't',
-            'U' => 'u',
-            'V' => 'v',
-            'W' => 'w',
-            'X' => 'x',
-            'Y' => 'y',
-            'Z' => 'z',
-            'á' => 'a',
-            'à' => 'a',
-            'â' => 'a',
-            'ã' => 'a',
-            'é' => 'e',
-            'ê' => 'e',
-            'í' => 'i',
-            'ó' => 'o',
-            'ô' => 'o',
-            'õ' => 'o',
-            'ú' => 'u',
-            'ç' => 'c',
-            ',' => '',
-            "'" => '',
-            "!" => '',
-            "?" => ''
-        );
-
-        $urlPost = $queryUrl;
-        $explodeUrl = explode(" ", $urlPost); //separa url
-        $newUrl = array_slice($explodeUrl, 2); //pega da terceira posição até o final do array 
-
-        //Percorre todo o array e modifica os caracteres listados no array acima
-        $removeCaracters = array_map(function($word) use ($caracters) { 
-            //Em seguida os retorna modificado
-            return strtr($word, $caracters);
-        }, $newUrl);
-        $implodeUrl = implode("-", $removeCaracters); // junta todos os array com "-" 
-
-        return $implodeUrl; 
-    }
 
     //Função para retornar, em PT-BR, os meses definidos na função Date()
     function takeData($allData){
@@ -116,10 +55,13 @@ function queryHomeMyPosts(){
     if ($result->num_rows > 0) {
         //Definindo a variavel row (linha) como um alinhado para o funcionamento da variavel result
         //usando o fetch assoc para percorrer todas as linhas da colunas no banco de dados
+
+        require_once "FormattedURL/FormattedURL.php";
+
         while ($row = $result->fetch_assoc()) {
             $data = $row['current_data']; //Data atual
             $url = $row['title']; //Titulo para ser usado na url
-            $url = FormattedUrl($url); //Usando a função de formatação de url
+            $urlFormatted = new Formatted_url($url); //Usando a função de formatação de url
             $id = $row['id']; 
 
             //Definindo a função, para mostrar os meses em PT-BR, como uma variavel
@@ -142,7 +84,7 @@ function queryHomeMyPosts(){
 
             echo "
             <div class='div_master_only_post'>
-                <a href='post/{$id}/{$url}'>
+                <a href='post/{$id}/{$urlFormatted}'>
                     <div class='div_only_post' title='Post in ~ $time'>
                         <label class='label_title_post'>{$row['title']}</label> 
                         <label class='label_fullData_post'>$day $month $year · $time</label>

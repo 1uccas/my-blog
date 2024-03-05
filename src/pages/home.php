@@ -1,5 +1,5 @@
 <?php
-include_once 'src/php/QueryProcessor.php';
+include_once 'src/php/QueryProcessor/QueryProcessor.php';
 ?>
 <head>
 	<meta charset="utf-8">
