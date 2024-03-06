@@ -95,6 +95,8 @@ function QueryPostID($id){
         while($row = $result_id->fetch_assoc()){
             return var_dump($row['post']);
         }     
+    }else{
+        include 'src/pages/not-found.html';
     }
 }
 ?>
