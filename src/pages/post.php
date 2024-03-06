@@ -2,7 +2,11 @@
 include_once 'src/php/QueryProcessor/QueryProcessor.php';
 if (isset($url[1])) {
 	$id = $url[1];
-	QueryPostID($id);
+	$Querys = QueryPostID($id);
+	$Post = $Querys['post'];
+	$title = $Querys['title_to_post'];
+
+	var_dump($Post);
 } else {
 	include 'src/pages/not-found.html';
 	die("Status ~> 404");
