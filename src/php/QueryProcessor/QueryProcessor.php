@@ -93,7 +93,10 @@ function QueryPostID($id){
 
     if ($result_id->num_rows > 0) {
         while($row = $result_id->fetch_assoc()){
-            return var_dump($row['post']);
+            return array (
+                "post" => $row['post'],
+                "title_to_post" =>$row["title"]
+            );
         }     
     }else{
         include 'src/pages/not-found.html';
