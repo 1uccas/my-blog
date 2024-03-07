@@ -22,6 +22,13 @@ if (isset($url[1])) {
 	<title><?php echo $title; ?></title>
 </head>
 <body>
-	<?php echo($content) ?>
+	<header class="header">
+		<script src="../../public/utils/header.js"></script>
+	</header>
+	<main class="main_master">
+		<?php echo($content) ?>
+	</main>
+	
+	<script src="../../public/utils/footer.js"></script>
 </body>
 </html>
