@@ -1,0 +1,33 @@
+body{
+	margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+.main_master_not_found{
+    padding-top: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: black;
+    color: white;
+}
+.label_404{
+    font-size: 25px;
+}
+.img-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.img-icon img{
+    height: auto;
+    margin: 5px;
+    width: 150px;
+
+}

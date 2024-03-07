@@ -36,7 +36,7 @@ document.write(`
 	<div class="footer_class">
 		<hr>
 		<footer class="footer_class_footer">
-		    <p><a href=""><img src="../../public/img/owl_color_white.png"></a>&copy; 2024 Flip ~ Flops - Todos os direitos reservados </p>
+		    <p><a href="/../home"><img src="../../public/img/owl_color_white.png"></a>&copy; 2024 Flip ~ Flops - Todos os direitos reservados </p>
 		    <div class="contact-me">
 		    	<a href="" target="_blank">Sobre</a>
 		    	<a href="https://www.instagram.com/_1uccass/" target="_blank">Instagram</a>
