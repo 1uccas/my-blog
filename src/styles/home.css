@@ -33,11 +33,11 @@ body{
     transition: transform 0.3s, box-shadow 0.2s;
 
     border-radius: 2px;
-    box-shadow: 0px 0px 0px gray;
+    box-shadow: 0px 0px 0px darkslategray;
 }
 .div_only_post:hover{
 	transform: scale(1.02);
-	box-shadow: 0px 5px 6px gray;
+	box-shadow: 0px 5px 6px darkslategray;
 }
 .label_title_post{
 	font-size: 30px;
