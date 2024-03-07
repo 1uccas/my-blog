@@ -95,7 +95,17 @@ function QueryPostID($id){
         while($row = $result_id->fetch_assoc()){
             return array (
                 "post" => $row['post'],
-                "title_to_post" =>$row["title"]
+                "title_to_post" => $row["title"],
+                "content_type" => "
+                <div class='master_class_post'>
+                    <div class='div_class_title'>
+                        <h1>$row[title]</h1>
+                    </div>
+                    <div class='div_class_post'>
+                        <p>$row[post]</p>
+                    </div>
+                </div>
+                "
             );
         }     
     }else{
