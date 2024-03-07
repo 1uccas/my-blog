@@ -110,7 +110,7 @@ function QueryPostID($id){
         }     
     }else{
         include 'src/pages/not-found.html';
-        die('404 - POST NÃO ENCONTRADO!');
+        die();
     }
 }
 ?>
