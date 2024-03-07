@@ -16,3 +16,9 @@ body{
     background-color: black;
     color: white;
 }
+.master_class_post{
+    margin-left: 150px;
+    margin-right: 150px;
+
+    text-align: justify;
+}
