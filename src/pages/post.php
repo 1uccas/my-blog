@@ -5,6 +5,7 @@ if (isset($url[1])) {
 	$Querys = QueryPostID($id);
 	$Post = $Querys['post'];
 	$title = $Querys['title_to_post'];
+	$content = $Querys['content_type'];
 } else {
 	include 'src/pages/not-found.html';
 	die("Status ~> 404");
@@ -20,14 +21,6 @@ if (isset($url[1])) {
 	<title><?php echo $title; ?></title>
 </head>
 <body>
-	<?php 
-	echo "
-	<center>
-		<h1>$title</h1>
-		<p>$Post</p>
-	</center>
-	";
-
-	?>
+	<?php echo($content) ?>
 </body>
 </html>
