@@ -8,7 +8,7 @@ if (isset($url[1])) {
 	$content = $Querys['content_type'];
 } else {
 	include 'src/pages/not-found.html';
-	die("Status ~> 404");
+	die();
 }
 ?>
 
