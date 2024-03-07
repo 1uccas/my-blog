@@ -5,6 +5,8 @@ document.write(`
 		  src: url("../../public/font/Protest_Riot/ProtestRiot-Regular.ttf");
 		}
 		.footer_class {
+			background-color: black;
+			color: white;
 	        width: 100%;
 	    }
 
