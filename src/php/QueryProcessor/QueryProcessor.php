@@ -1,6 +1,7 @@
 <?php 
 require_once "FormattedURL/FormattedURL.php";
 require_once "Date/Date.php";
+require_once 'vendor/erusev/parsedown/Parsedown.php';
 
 function returnQuery(){ //Retorno de consultas do banco de dados
     function SimplesQueryPost(){//Retorno simples (padrão) de uma consulta
@@ -87,6 +88,8 @@ function QueryPostID($id){
     $mysql = new DatabaseConnection();
     $link = $mysql->getLink();
 
+    $Parsedown = new Parsedown();
+
     //Selecionando apenas os post que contenham o id indicado pela URL definida em index.php
     $query_id = "SELECT * FROM my_posts WHERE id='$id';";
     $result_id = $link->query($query_id);
@@ -99,10 +102,10 @@ function QueryPostID($id){
                 "content_type" => "
                 <div class='master_class_post'>
                     <div class='div_class_title'>
-                        <h1>$row[title]</h1>
+                        ".$Parsedown->text("#$row[title]")."
                     </div>
                     <div class='div_class_post'>
-                        <p>$row[post]</p>
+                        ".$Parsedown->text($row['post'])."
                     </div>
                 </div>
                 "
