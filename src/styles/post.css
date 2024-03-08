@@ -45,3 +45,11 @@ table td, table th{
 
     padding: 15px;
 }
+
+pre{
+    background: #0d1117;
+    color: white;
+    padding: 15px;
+
+    border-radius: 10px;
+}
