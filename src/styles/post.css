@@ -56,3 +56,15 @@ pre{
 
     border-radius: 10px;
 }
+
+.main_master img{
+    height: auto;
+    width: auto;
+}
+.main_master p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:  center;
+
+}
