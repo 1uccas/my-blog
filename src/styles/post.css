@@ -26,7 +26,7 @@ body{
     text-align: center;
 }
 
-h1{
+h1,h2,h3,h4{
     padding-top: 25px;
     padding-bottom: 20px;
 
@@ -55,4 +55,35 @@ pre{
     padding: 15px;
 
     border-radius: 10px;
+}
+blockquote {
+    padding: 14px 14px 12px 12px !important;
+    margin: 1em 3em;
+    text-align: right;
+    font-size: 10pt;
+}
+
+blockquote p {
+    text-align: left;
+    font-size: 12pt;
+}
+
+blockquote p:before {
+    font-size: 34pt;
+    font-weight: bold;
+    line-height: 11pt;
+    margin-left: -4px;
+    margin-right: 8px;
+    vertical-align: text-bottom;
+    content: '\201C';
+    color: #e1e1e1;
+    text-shadow: -1px -1px #999;
+}
+
+.div_class_post img {
+    display: block; /* Garante que a imagem se comporte como um bloco */
+    height: auto;
+    width:  auto;
+    margin-left: auto; /* Define a margem esquerda como automática */
+    margin-right: auto; /* Define a margem direita como automática */
 }
