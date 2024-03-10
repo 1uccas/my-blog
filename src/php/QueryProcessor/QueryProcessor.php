@@ -93,7 +93,7 @@ function queryHomeMyPosts(){
     }
 }
 //Função para retornar IDS que serão usados na página POST.
-function QueryPostID($id){
+function QueryPostID($Date){
     require_once 'src/conf/db.php';
 
     $mysql = new DatabaseConnection();
@@ -102,11 +102,11 @@ function QueryPostID($id){
     $Parsedown = new Parsedown();
 
     //Selecionando apenas os post que contenham o id indicado pela URL definida em index.php
-    $query_id = "SELECT * FROM my_posts WHERE id='$id';";
-    $result_id = $link->query($query_id);
+    $query_date = "SELECT * FROM my_posts WHERE current_data LIKE '$Date %';";
+    $result_Date = $link->query($query_date);
 
-    if ($result_id->num_rows > 0) {
-        while($row = $result_id->fetch_assoc()){
+    if ($result_Date->num_rows > 0) {
+        while($row = $result_Date->fetch_assoc()){
             return array (
                 "post" => $row['post'],
                 "title_to_post" => $row["title"],
