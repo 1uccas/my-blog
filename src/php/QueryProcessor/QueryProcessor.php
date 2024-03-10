@@ -47,7 +47,6 @@ function queryHomeMyPosts(){
             //Datas para URL
             $initial_data = explode(" ", $data);
             $DatatoURL = $initial_data[0];
-            print_r($initial_data[0]);
 
             //função para formatar caracteres da URL
             //Recebe um parametro de acesso ~> a propria URL
