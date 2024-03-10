@@ -1,6 +1,6 @@
 <?php 
 include_once 'src/php/QueryProcessor/QueryProcessor.php';
-if (isset($url[1])) {
+if (isset($url[1]) && isset($url[2]) && isset($url[3])) {
 	$fullDate = ($url[1]."-".$url[2]."-".$url[3]);
 
 	$Querys = QueryPostID($fullDate);
