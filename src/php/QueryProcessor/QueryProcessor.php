@@ -46,16 +46,9 @@ function queryHomeMyPosts(){
 
             //Datas para URL
             $initial_data = explode(" ", $data);
-            $explode_data = explode("-", $initial_data[0]);
-            $full_data_post = array_slice($explode_data, 0);
-            $DatatoURL = implode("/", $full_data_post);
+            $DatatoURL = $initial_data[0];
+            print_r($initial_data[0]);
 
-            $array_post_data = array(
-                "year_post" => $explode_data[0],
-                "month_post" => $explode_data[1],
-                "day_post" => $explode_data[2],
-                "full_data_post" => $full_data_post
-            );
             //função para formatar caracteres da URL
             //Recebe um parametro de acesso ~> a propria URL
             $urlFormatted = new Formatted_url($url);
