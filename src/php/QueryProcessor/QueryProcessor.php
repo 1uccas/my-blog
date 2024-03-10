@@ -44,10 +44,13 @@ function queryHomeMyPosts(){
             $data = $row['current_data']; //Data atual
             $url = $row['title']; //Titulo para ser usado na url
 
+            //Datas para URL
+            $initial_data = explode(" ", $data);
+            $DatatoURL = $initial_data[0];
+
             //função para formatar caracteres da URL
             //Recebe um parametro de acesso ~> a propria URL
             $urlFormatted = new Formatted_url($url);
-            $id = $row['id']; 
 
             //Função para retornar, em PT-BR, os meses definidos na função Date()
             //Definindo a função, para mostrar os meses em PT-BR, como uma variavel
@@ -70,7 +73,7 @@ function queryHomeMyPosts(){
 
             echo "
             <div class='div_master_only_post'>
-                <a href='post/{$id}/{$urlFormatted}'>
+                <a href='post/{$DatatoURL}/{$urlFormatted}'>
                     <div class='div_only_post' title='Post in ~ $time'>
                         <label class='label_title_post'>{$row['title']}</label> 
                         <label class='label_fullData_post'>$day $month $year · $time</label>
@@ -82,7 +85,7 @@ function queryHomeMyPosts(){
     }
 }
 //Função para retornar IDS que serão usados na página POST.
-function QueryPostID($id){
+function QueryPostID($Date){
     require_once 'src/conf/db.php';
 
     $mysql = new DatabaseConnection();
@@ -91,11 +94,11 @@ function QueryPostID($id){
     $Parsedown = new Parsedown();
 
     //Selecionando apenas os post que contenham o id indicado pela URL definida em index.php
-    $query_id = "SELECT * FROM my_posts WHERE id='$id';";
-    $result_id = $link->query($query_id);
+    $query_date = "SELECT * FROM my_posts WHERE current_data LIKE '$Date %';";
+    $result_Date = $link->query($query_date);
 
-    if ($result_id->num_rows > 0) {
-        while($row = $result_id->fetch_assoc()){
+    if ($result_Date->num_rows > 0) {
+        while($row = $result_Date->fetch_assoc()){
             return array (
                 "post" => $row['post'],
                 "title_to_post" => $row["title"],

@@ -1,8 +1,9 @@
 <?php 
 include_once 'src/php/QueryProcessor/QueryProcessor.php';
 if (isset($url[1])) {
-	$id = $url[1];
-	$Querys = QueryPostID($id);
+	$fullDate = $url[1];
+
+	$Querys = QueryPostID($fullDate);
 	$Post = $Querys['post'];
 	$title = $Querys['title_to_post'];
 	$content = $Querys['content_type'];
