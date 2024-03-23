@@ -2,6 +2,10 @@
     font-family: 'Protest Riot';
     src: url("../../public/font/Protest_Riot/ProtestRiot-Regular.ttf");
 }
+@font-face {
+    font-family: 'Inconsolata';
+    src: url("../../public/font/Inconsolata/static/Inconsolata-ExtraLight.ttf");
+}
 body{
 	margin: 0;
     display: flex;
@@ -19,6 +23,7 @@ body{
 
     background-color: black;
     color: white;
+    font-family: Inconsolata;
 }
 .master_class_post{
     margin-left: 150px;
