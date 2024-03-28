@@ -85,9 +85,13 @@ pre{
     background: #0d1117;
     color: white;
     padding: 15px;
-
+    
     border-radius: 10px;
 }
+pre code{
+    font-family: Inconsolata;
+}
+
 blockquote {
     padding: 14px 14px 12px 12px !important;
     margin: 1em 3em;
