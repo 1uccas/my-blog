@@ -31,7 +31,20 @@ document.write(`
 	    	margin-left: 150px;
 	    	margin-right: 150px;
 	    }
-
+	    @media screen and (min-width: 50px) and (max-width: 800px){
+			.footer_class{
+				padding: 0rem 1rem 0rem 1rem;
+			}
+			.footer_class_footer p{
+				font-size: 15px;
+			}
+			.contact-me {
+				margin-right: 50px;
+			}
+			hr{
+				margin: auto;
+			}
+		}
 	</style>
 	<div class="footer_class">
 		<hr>
