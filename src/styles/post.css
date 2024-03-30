@@ -115,8 +115,8 @@ blockquote p:before {
 
 .div_class_post img {
     display: block; /* Garante que a imagem se comporte como um bloco */
-    height: auto;
-    width:  auto;
+    height: 300px;
+    width:  300px;
     margin-left: auto; /* Define a margem esquerda como automática */
     margin-right: auto; /* Define a margem direita como automática */
 }
