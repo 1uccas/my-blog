@@ -31,6 +31,14 @@ document.write(`
 			margin: 5px;
 			width: 30px;
 		}
+		@media screen and (min-width: 100px) and (max-width: 800px){
+			.container-fluid{
+				text-align: center;
+				font-size: auto;
+
+				width: auto;
+			}
+		}
 	</style>
 	<main>
 		<nav class="navbar_class" data-bs-theme="light" id="navbar_header">
