@@ -40,7 +40,7 @@ document.write(`
 			}
 		}
 	</style>
-	<main>
+	<main class="master">
 		<nav class="navbar_class" data-bs-theme="light" id="navbar_header">
 		  <div class="container-fluid">
 		    <a class="navbar-brand" href="/../home"><label id="txtHeader">Flip~<img src="../../public/img/owl_white_color.png">~Flops</label></a>
