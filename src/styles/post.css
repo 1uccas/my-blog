@@ -120,3 +120,23 @@ blockquote p:before {
     margin-left: auto; /* Define a margem esquerda como automática */
     margin-right: auto; /* Define a margem direita como automática */
 }
+
+@media screen and (min-width: 270px) and (max-width: 800px){
+    .main_master{
+        padding: 40px 1rem 0rem 1rem;
+    }
+    .div_class_post img{
+        height: 250px;
+        width:  250px;
+    }
+}
+
+@media screen and (min-width: 50px) and (max-width: 270px){
+    .main_master{
+        padding: 40px 1rem 0rem 1rem;
+    }
+    .div_class_post img{
+        height: 150px;
+        width:  150px;
+    }
+}
