@@ -27,7 +27,9 @@ if (isset($url[1])) {
 		<script src="../../public/utils/header.js"></script>
 	</header>
 	<main class="main_master">
-		<?php echo($content) ?>
+		<div class="container">
+			<?php echo($content) ?>	
+		</div>
 	</main>
 	
 	<script src="../../public/utils/footer.js"></script>
